@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from 'react';
 import { Plus, Edit, Trash2, X } from 'lucide-react';
 import { sheetGetItems } from './Home/dataUtil';
+let appSheetURL = "";
 
 const CrudApp = () => {
   const [items, setItems] = useState([]);
@@ -30,7 +31,6 @@ const CrudApp = () => {
   });
 
   useEffect(() => {
-    //console.log(import.meta.env);
     const fetchTodos = async () => {
       try{
         const sheetId = import.meta.env.VITE_SPREADSHEET_ID_1;
@@ -43,6 +43,7 @@ const CrudApp = () => {
         const json = await response.json();
         const data = sheetGetItems(json.values)
         console.log(data); 
+        appSheetURL = import.meta.env.VITE_APPSHEET_URL;
         setItems(data);
       }catch(e){
         console.error(e);
@@ -168,7 +169,7 @@ const CrudApp = () => {
             </button>
           </div>
           <div className="mx-2 mb-2">
-            <a href="https://www.appsheet.com/start/6fe7c024-a984-457b-af8d-9e2a2554f31f?platform=desktop#appName=sheet_todo-476696995&vss=H4sIAAAAAAAAA6WOOw7CMBAF7_JqN7RuEQVC0IBoMIWJN5JFYkfYASLLDWm4EQ23yUVw-Cg1UO5bzWgCjppOSy-zPfgmDNeMGnAEgVVTkQAXGFvjD7YQYAILWb7G7nLr2nvXXkcCEXHLPgZPDjx8K-D_FjBoRcbrXNOht_VssrzJ9O65NAwUIkNZe7kr6JmdqBjTltusdqTWKeenDDc1k3MljZpblaS5LBzFB6acCABvAQAA&view=%E3%82%B7%E3%83%BC%E3%83%881"
+            <a href={appSheetURL}
             >[ Edit ]</a> 
           </div>
 
