@@ -29,5 +29,7 @@ CSV_PATH_BASE="http://localhost:3000/data/"
 ***
 ### blog 
 
+https://zenn.dev/link/comments/0d916d62abe8fe
+
 ***
 
