@@ -24,7 +24,6 @@ const AgentUtil = {
       let text = "### Step1: リストを markdown記法の表形式で表示" + "\n";
       let json = await this.postAgent("getSheetTestで、リストを markdown記法の表形式で表示して欲しい");
       text += json.text;
-      //text += "\n" + "***" + "\n";
 
       text += "### Step2: 一覧のCSVダウンロードのリンク表示" + "\n";;
       json = await this.postAgent("getSheetCsvで。一覧のCSVダウンロードのリンク表示して欲しい。");
@@ -53,9 +52,14 @@ const AgentUtil = {
         headers: {'Content-Type': 'application/json'},      
         body: body
       });
+      if(res.ok === false){
+       throw new Error("res.OK = NG"); 
+      };
       const json = await res.json();
       console.log(json);
-      //const htm = marked.parse(json.text);
+      if(json.ret !== 200){
+        throw new Error('res.ret = NG');
+      }
       return json
     }catch(e){
       console.error(s);
