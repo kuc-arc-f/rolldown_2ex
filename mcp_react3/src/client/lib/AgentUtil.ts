@@ -17,6 +17,25 @@ const AgentUtil = {
 
     return ret;
   },
+  /*
+  *
+  * @param
+  *
+  * @return
+  */
+  validAgentName: function (message: string): string {
+    let ret = null;
+
+    if(message.indexOf("sheet-list-agent") >= 0){
+      return "sheet-list-agent";
+    }
+    //price-list-up-agent 200 JPY以上
+    if(message.indexOf("price-list-up-agent") >= 0){
+      return "price-list-up-agent";
+    }
+
+    return ret;
+  },
 
   /*
   *

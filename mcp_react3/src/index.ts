@@ -35,8 +35,12 @@ app.post('/api/agent', async (req: any, res: any) => {
     const body = req.body;
 
     console.log(body);
-    const result = await PriceListUpAgent(body.messages);
-    //const result = await SheetListAgent();
+    let result = "";
+    if(body.agent_name === "sheet-list-agent"){
+      result = await SheetListAgent();
+    }else{
+      result = await PriceListUpAgent(body.messages);
+    }
     console.log(result);
 
     return res.send({ret: 200, text: result});

@@ -18,10 +18,11 @@ export default function Chat() {
       };
       console.log("inText=", inText);
       if(!inText){ return; }
-      //console.log("validAgent=", AgentUtil.validAgent(inText.trim()));
+      //console.log("validAgent=", AgentUtil.validAgentName(inText.trim()));
       setIsLoading(true);
-      if(AgentUtil.validAgent(inText.trim())){
-        const item = {messages: inText};
+      const agentName = AgentUtil.validAgentName(inText.trim());
+      if(agentName){
+        const item = {messages: inText, agent_name: agentName};
         const body: any = JSON.stringify(item);		
         const res = await fetch("/api/agent", {
           method: 'POST',
