@@ -5,6 +5,8 @@ import { getSheetCsv } from '../tools/getSheetCsv';
 import { getPriceParam } from '../tools/getPriceParam';
 import { getPriceListUp } from '../tools/getPriceListUp';
 import { getPriceUpTotal } from '../tools/getPriceUpTotal';
+import { getPriceUpDown } from '../tools/getPriceUpDown';
+import { getPriceUpDownTotal } from '../tools/getPriceUpDownTotal';
 
 const resultText = "";
 const MODEL_NAME = "gemini-2.0-flash";
@@ -23,7 +25,7 @@ const AgentUtil = {
       model: google(MODEL_NAME),
         tools: {
           getSheetTest , getSheetCsv , getPriceParam , getPriceListUp ,
-          getPriceUpTotal ,
+          getPriceUpTotal , getPriceUpDown , getPriceUpDownTotal , 
         },
         maxSteps: 5,
         messages: [{ role: "user", content: messages }],

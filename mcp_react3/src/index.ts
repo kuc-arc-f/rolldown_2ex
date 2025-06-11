@@ -9,9 +9,12 @@ import { getPriceList } from './tools/getPriceList';
 import { getPriceListUp } from './tools/getPriceListUp';
 import { getPriceParam } from './tools/getPriceParam';
 import { getPriceUpTotal } from './tools/getPriceUpTotal';
+import { getPriceUpDown } from './tools/getPriceUpDown';
+import { getPriceUpDownTotal } from './tools/getPriceUpDownTotal';
 
 import { SheetListAgent } from './agent/sheet-list-agent';
 import { PriceListUpAgent } from './agent/price-list-up-agent';
+import { PriceListUpdownAgent } from './agent/price-list-updown-agent.ts';
 
 const app = express();
 import 'dotenv/config'
@@ -38,10 +41,12 @@ app.post('/api/agent', async (req: any, res: any) => {
     let result = "";
     if(body.agent_name === "sheet-list-agent"){
       result = await SheetListAgent();
+    }else if(body.agent_name === "price-list-updown-agent"){
+      result = await PriceListUpdownAgent(body.messages);
     }else{
       result = await PriceListUpAgent(body.messages);
     }
-    console.log(result);
+    //console.log(result);
 
     return res.send({ret: 200, text: result});
   } catch (error) {
@@ -58,7 +63,7 @@ app.post('/api/chat', async (req: any, res: any) => {
       model: google(MODEL_NAME),
       tools: {
         getSheetTest , getSheetCsv , getPriceList , getPriceParam , 
-        getPriceListUp , getPriceUpTotal , 
+        getPriceListUp , getPriceUpTotal , getPriceUpDown , getPriceUpDownTotal , 
       },
       maxSteps: 5,
       messages: [{ role: "user", content: body.messages }],
