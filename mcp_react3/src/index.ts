@@ -3,6 +3,7 @@ import express from 'express';
 import { renderToString } from 'react-dom/server';
 import { google } from "@ai-sdk/google";
 import { generateText } from 'ai';
+
 import { getSheetTest } from './tools/getSheetTest';
 import { getSheetCsv } from './tools/getSheetCsv';
 import { getPriceList } from './tools/getPriceList';
@@ -11,10 +12,14 @@ import { getPriceParam } from './tools/getPriceParam';
 import { getPriceUpTotal } from './tools/getPriceUpTotal';
 import { getPriceUpDown } from './tools/getPriceUpDown';
 import { getPriceUpDownTotal } from './tools/getPriceUpDownTotal';
+import { firstGetRandom } from './tools/firstGetRandom';
+import { firstGetDate } from './tools/firstGetDate';
+import { firstGetTime } from './tools/firstGetTime';
 
 import { SheetListAgent } from './agent/sheet-list-agent';
 import { PriceListUpAgent } from './agent/price-list-up-agent';
-import { PriceListUpdownAgent } from './agent/price-list-updown-agent.ts';
+import { PriceListUpdownAgent } from './agent/price-list-updown-agent';
+import { firstAgent } from './agent/first-agent';
 
 const app = express();
 import 'dotenv/config'
@@ -43,6 +48,8 @@ app.post('/api/agent', async (req: any, res: any) => {
       result = await SheetListAgent();
     }else if(body.agent_name === "price-list-updown-agent"){
       result = await PriceListUpdownAgent(body.messages);
+    }else if(body.agent_name === "first-agent"){
+      result = await firstAgent();
     }else{
       result = await PriceListUpAgent(body.messages);
     }
@@ -64,6 +71,7 @@ app.post('/api/chat', async (req: any, res: any) => {
       tools: {
         getSheetTest , getSheetCsv , getPriceList , getPriceParam , 
         getPriceListUp , getPriceUpTotal , getPriceUpDown , getPriceUpDownTotal , 
+        firstGetRandom , firstGetDate , firstGetTime ,
       },
       maxSteps: 5,
       messages: [{ role: "user", content: body.messages }],

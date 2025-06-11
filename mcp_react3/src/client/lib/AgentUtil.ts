@@ -36,6 +36,9 @@ const AgentUtil = {
     if(message.indexOf("price-list-updown-agent") >= 0){
       return "price-list-updown-agent";
     }
+    if(message.indexOf("first-agent") >= 0){
+      return "first-agent";
+    }
 
     return ret;
   },

@@ -7,6 +7,10 @@ import { getPriceListUp } from '../tools/getPriceListUp';
 import { getPriceUpTotal } from '../tools/getPriceUpTotal';
 import { getPriceUpDown } from '../tools/getPriceUpDown';
 import { getPriceUpDownTotal } from '../tools/getPriceUpDownTotal';
+import { firstGetRandom } from '../tools/firstGetRandom';
+import { firstGetDate } from '../tools/firstGetDate';
+import { firstGetTime } from '../tools/firstGetTime';
+
 
 const resultText = "";
 const MODEL_NAME = "gemini-2.0-flash";
@@ -26,6 +30,7 @@ const AgentUtil = {
         tools: {
           getSheetTest , getSheetCsv , getPriceParam , getPriceListUp ,
           getPriceUpTotal , getPriceUpDown , getPriceUpDownTotal , 
+          firstGetRandom , firstGetDate , firstGetTime ,
         },
         maxSteps: 5,
         messages: [{ role: "user", content: messages }],
