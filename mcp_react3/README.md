@@ -18,7 +18,7 @@ Agent example + React , sequential-steps
 npm run dev
 ```
 ***
-### Setp
+### Setup
 * .env
 ```
 GOOGLE_GENERATIVE_AI_API_KEY="api-key"

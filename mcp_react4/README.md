@@ -17,8 +17,14 @@ Agent example + React , sequential-steps
 ```
 npm run dev
 ```
+
 ***
-### Setp
+* Gif
+
+![img1](/image/mcp_react4_1.gif)
+
+***
+### Setup
 * .env
 ```
 GOOGLE_GENERATIVE_AI_API_KEY="api-key"
