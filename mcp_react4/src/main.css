@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+#get_text_wrap table td {
+  border: solid;
+  margin-bottom: 1rem;
+} 
+
+#get_text_wrap h3 {
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+
+#get_text_wrap hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
