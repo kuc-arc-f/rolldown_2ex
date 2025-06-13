@@ -34,8 +34,11 @@ CSV_PATH_BASE="http://localhost:3000/data/"
 ```
 price-list-updown-agent 最低金額: 100 円 , 最高金額: 200 円
 ```
+
 ***
 ### blog 
+
+https://zenn.dev/link/comments/0b10e724b520c4
 
 ***
 
