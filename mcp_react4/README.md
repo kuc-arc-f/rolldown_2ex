@@ -21,7 +21,7 @@ npm run dev
 ***
 * Gif
 
-![img1](/image/mcp_react4_1.gif)
+![img1](/image/mcp_react4_2.gif)
 
 ***
 ### Setup
