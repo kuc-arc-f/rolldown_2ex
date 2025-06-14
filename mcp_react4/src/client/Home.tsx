@@ -41,12 +41,14 @@ export default function Chat() {
         let htmAll = "";
         const agentSendProc = async function(){
           for(const row of items) {
-            htmAll += marked.parse(row.title);
+            //htmAll += marked.parse(row.title);
+            htmAll += `<div class="label character-label w-full">${row.title}</div>`;
             console.log(row);
             let res = await ApiUtil.post({messages: row.text }, "/api/chat");
             console.log(res);
+            htmAll += `<div class="chat-bubble character-bubble w-full">`;
             htmAll += marked.parse(res.text);
-            htmAll += marked.parse("***" + "\n");
+            htmAll +=  `</div>`
             //console.log(htmAll);
             setText(htmAll);
           };
@@ -75,9 +77,10 @@ export default function Chat() {
   }
 
   return (
-    <div className="flex flex-col w-full max-w-2xl py-4 mx-auto gap-4">
-      <h1 className="text-2xl font-bold">Agent-Chat</h1>
-      <div className="flex flex-col gap-2">
+  <div className="mb-[200px]">
+    <div className="flex flex-col w-full max-w-3xl py-4 mx-auto gap-4">
+      <div className="flex flex-col gap-2 px-4 bg-white">
+        <h1 className="text-2xl font-bold">Agent-Chat</h1>
         <input
           id="input_text"
           type="text"
@@ -86,20 +89,24 @@ export default function Chat() {
         />
         <button
           type="button"
-          className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 disabled:bg-gray-700"
+          className="px-4 py-2 text-white bg-gray-600 rounded hover:bg-gray-700 disabled:bg-gray-700"
           onClick={()=>{chatStart()}}
         > GO
         </button>
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: text }} id="get_text_wrap"
-            className="mb-8 p-2 bg-gray-100" />
-          {isLoading ? (
-            <div 
-            className="animate-spin rounded-full h-8 w-8 mx-4 border-t-4 border-b-4 border-blue-500">
-            </div>
-          ): null}
-        </div>
+
       </div>
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: text }} id="get_text_wrap"
+          className="mb-8 p-2" />
+        {isLoading ? (
+          <div 
+          className="animate-spin rounded-full h-8 w-8 mx-4 border-t-4 border-b-4 border-blue-500">
+          </div>
+        ): null}
+      </div>
+
     </div>
+  </div>
+
   );
 }

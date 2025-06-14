@@ -32,19 +32,19 @@ export function PriceListUpdownAgent(inputText){
     const items = [
       { 
         text: cmd_1 , 
-        title: "### Step1: 指定価格範囲のリストを表示します。" + "\n"
+        title: "Step1: 指定価格範囲のリストを表示します。" + "\n"
       } , 
       { 
         text: cmd_2 , 
-        title: "### Step2: 指定価格範囲の合計金額を表示します。" + "\n"
+        title: "Step2: 指定価格範囲の合計金額を表示します。" + "\n"
       } , 
       { 
         text: cmd_3 , 
-        title: "### Step3: 指定価格範囲の最低値を表示します。" + "\n"
+        title: "Step3: 指定価格範囲の最低値を表示します。" + "\n"
       } , 
       { 
         text: cmd_4 , 
-        title: "### Step4: 指定価格範囲の最高値を表示します。" + "\n"
+        title: "Step4: 指定価格範囲の最高値を表示します。" + "\n"
       } ,
 
     ];

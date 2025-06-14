@@ -20,11 +20,11 @@ export function PriceListUpAgent(inputText){
     const items = [
       { 
         text: `getPriceListUp 価格: ${step1num} 円以上の。リストを markdown記法の表形式で表示して欲しい` ,
-        title: "### Step1: 指定価格以上のリストを表示します。" + "\n"
+        title: "Step1: 指定価格以上のリストを表示します。" + "\n"
       } , 
       { 
         text: `getPriceUpTotal 価格: ${step1num} 円以上` ,
-        title: "### Step2: 指定価格以上の合計金額を表示します。" + "\n"
+        title: "Step2: 指定価格以上の合計金額を表示します。" + "\n"
       } , 
     ];
 
