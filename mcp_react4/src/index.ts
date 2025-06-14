@@ -19,10 +19,10 @@ import { firstGetRandom } from './tools/firstGetRandom';
 import { firstGetDate } from './tools/firstGetDate';
 import { firstGetTime } from './tools/firstGetTime';
 
-import { SheetListAgent } from './agent/sheet-list-agent';
-import { PriceListUpAgent } from './agent/price-list-up-agent';
-import { PriceListUpdownAgent } from './agent/price-list-updown-agent';
-import { firstAgent } from './agent/first-agent';
+//import { SheetListAgent } from './agent/sheet-list-agent';
+//import { PriceListUpAgent } from './agent/price-list-up-agent';
+//import { PriceListUpdownAgent } from './agent/price-list-updown-agent';
+//import { firstAgent } from './agent/first-agent';
 
 const app = express();
 import 'dotenv/config'
@@ -40,30 +40,6 @@ const MODEL_NAME = "gemini-2.0-flash";
 
 //app.use('/api/common', commonRouter);
 // API
-app.post('/api/agent', async (req: any, res: any) => {
-  try {
-    console.log("# /api/agent")
-    const body = req.body;
-
-    console.log(body);
-    let result = "";
-    if(body.agent_name === "sheet-list-agent"){
-      result = await SheetListAgent();
-    }else if(body.agent_name === "price-list-updown-agent"){
-      result = await PriceListUpdownAgent(body.messages);
-    }else if(body.agent_name === "first-agent"){
-      result = await firstAgent();
-    }else{
-      result = await PriceListUpAgent(body.messages);
-    }
-    //console.log(result);
-
-    return res.send({ret: 200, text: result});
-  } catch (error) {
-    res.sendStatus(500);
-  }
-});
-
 app.post('/api/chat', async (req: any, res: any) => {
   try {
     const body = req.body;
