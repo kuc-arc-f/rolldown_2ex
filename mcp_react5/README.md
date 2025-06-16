@@ -34,5 +34,7 @@ tool_sample_agent
 ***
 ### blog 
 
+https://zenn.dev/link/comments/5f32f93c8f1604
+
 ***
 
