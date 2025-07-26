@@ -4,21 +4,6 @@ import { renderToString } from 'react-dom/server';
 import { google } from "@ai-sdk/google";
 import { generateText } from 'ai';
 
-import { getSheetTest } from './tools/getSheetTest';
-import { getSheetCsv } from './tools/getSheetCsv';
-import { getPriceList } from './tools/getPriceList';
-import { getPriceListUp } from './tools/getPriceListUp';
-import { getPriceParam } from './tools/getPriceParam';
-import { getPriceUpTotal } from './tools/getPriceUpTotal';
-import { getPriceUpDown } from './tools/getPriceUpDown';
-import { getPriceUpDownTotal } from './tools/getPriceUpDownTotal';
-import { getPriceUpDownMin } from './tools/getPriceUpDownMin';
-import { getPriceUpDownMax } from './tools/getPriceUpDownMax';
-
-import { firstGetRandom } from './tools/firstGetRandom';
-import { firstGetDate } from './tools/firstGetDate';
-import { firstGetTime } from './tools/firstGetTime';
-
 const app = express();
 import 'dotenv/config'
 
@@ -33,7 +18,6 @@ console.log("env=", process.env.NODE_ENV)
 const errorObj = {ret: "NG", messase: "Error"};
 const MODEL_NAME = "gemini-2.0-flash";
 
-//app.use('/api/common', commonRouter);
 // API
 app.post('/api/chat', async (req: any, res: any) => {
   try {
