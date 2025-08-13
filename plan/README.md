@@ -2,7 +2,7 @@
 
  Version: 0.9.1
 
- date    : 2025/06/15
+ date    : 2025/08/13
  
  update  :
 
@@ -16,6 +16,11 @@ plan app
 npm run build
 npm run dev
 ```
+
+***
+### API-Server
+
+https://github.com/kuc-arc-f/d1-project8git
 
 ***
 ### Setp
