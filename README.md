@@ -4,7 +4,7 @@
 
  date    : 2025/06/07
  
- update  : 2025/07/26 
+ update  : 2025/08/12 
 
 ***
 ### Summary
@@ -15,7 +15,7 @@ rolldown-vite , fullstack example
 * build, dev-start
 
 ```
-yarn dev
+npm run dev
 ```
 
 ***
