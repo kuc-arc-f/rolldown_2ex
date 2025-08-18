@@ -1,7 +1,9 @@
 import { PGlite } from '@electric-sql/pglite'
+import 'dotenv/config'
+console.log("DATA_DIR=", process.env.DATA_DIR)
 
 //const db = new PGlite('./pgdata')
-const db = new PGlite('/tmp/pgdata')
+const db = new PGlite(process.env.DATA_DIR)
 await db.exec(`
   CREATE TABLE IF NOT EXISTS todo (
     id SERIAL PRIMARY KEY,

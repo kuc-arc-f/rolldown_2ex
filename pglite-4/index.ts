@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 console.log("env=", process.env.NODE_ENV)
+console.log("DATA_DIR=", process.env.DATA_DIR)
 //console.log(process.env);
 
 const errorObj = {ret: "NG", messase: "Error"};

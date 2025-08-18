@@ -2,7 +2,8 @@ import express from 'express';
 const router = express.Router();
 import axios from 'axios';
 import { PGlite } from '@electric-sql/pglite'
-export const db = new PGlite('/tmp/pgdata');
+//export const db = new PGlite('/tmp/pgdata');
+export const db = new PGlite(process.env.DATA_DIR);
 
 router.post('/create', async function(req: any, res: any) {
   try {
