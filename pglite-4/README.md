@@ -8,7 +8,7 @@
 
 ***
 
-PGLite WASM (postgres) , express
+PGLite WASM (postgres) , React + express
 
 ***
 ### Setup
