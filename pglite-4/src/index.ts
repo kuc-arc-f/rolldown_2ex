@@ -5,15 +5,15 @@ import { renderToString } from 'react-dom/server';
 const app = express();
 import 'dotenv/config'
 
-import Top from './src/pages/App';
-import todoRouter from './src/routes/todo';
+import Top from './pages/App';
+import todoRouter from './routes/todo';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 console.log("env=", process.env.NODE_ENV)
-console.log("DATA_DIR=", process.env.DATA_DIR)
-//console.log(process.env);
+console.log("env.DATA_DIR=", process.env.DATA_DIR)
+//console.log(process.env); 
 
 const errorObj = {ret: "NG", messase: "Error"};
 

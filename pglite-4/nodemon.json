@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts,tsx,js,jsx,css", 
   "ignore": ["src/lib/**/*.txt"],
-  "exec": "npm run build"
+  "exec": "npm run build && npx tsx ./src/index.ts"
 }

@@ -14,6 +14,7 @@ PGLite WASM (postgres) , React + express
 ### Setup
 
 * .env
+* data folder set
 ```
 DATA_DIR="/path/pgdata"
 ```
@@ -29,7 +30,7 @@ node ./db_init.js
 
 ```
 npm run build
-npm run start
+npm run dev
 ```
 ***
 ### blog 

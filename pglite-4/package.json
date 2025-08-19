@@ -1,12 +1,13 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "nodemon",
     "build": "npm run build:js && npm run build:css",
-    "build:server": "bunx esbuild --bundle --platform=node ./index.ts  --outfile=./index.js",
-    "build:js": "bunx esbuild --bundle src/entry-client.tsx --minify --outfile=./public/static/entry-client.js",
+    "build:server": "npx esbuild --bundle --format=esm --platform=node ./src/index.ts  --outfile=./dist/index.js",
+    "build:js": "npx esbuild --bundle src/entry-client.tsx --minify --outfile=./public/static/entry-client.js",
     "build:css": "npx @tailwindcss/cli -i ./src/main.css -o ./public/static/main.css",
     "clean": "rimraf dist && rimraf public/static",
-    "start": "npx tsx ./index.ts"
+    "start": "npx tsx ./src/index.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.7",

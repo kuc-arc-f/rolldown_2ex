@@ -3,7 +3,7 @@ import axios from 'axios';
 import { z } from 'zod';
 import  Head from "../components/Head";
 
-//  Zod バリデーションスキーマ
+// Zod バリデーションスキーマ
 const todoSchema = z.object({
   title: z.string().min(1, { message: 'タイトルは必須です' }),
 });
