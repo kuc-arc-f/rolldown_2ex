@@ -7,6 +7,7 @@ import 'dotenv/config'
 
 import Top from './pages/App';
 import todoRouter from './routes/todo';
+import planRouter from './routes/plan';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ console.log("env.DATA_DIR=", process.env.DATA_DIR)
 const errorObj = {ret: "NG", messase: "Error"};
 
 app.use('/api/todos', todoRouter);
+app.use('/api/plan', planRouter);
 // API
 app.post('/api/chat', async (req, res) => {
   try {

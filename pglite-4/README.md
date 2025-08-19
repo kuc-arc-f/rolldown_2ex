@@ -30,7 +30,7 @@ node ./db_init.js
 
 ```
 npm run build
-npm run dev
+npm run start
 ```
 ***
 ### blog 
