@@ -14,6 +14,15 @@ await db.exec(`
   INSERT INTO todo (title, content) VALUES ('Load PGlite', 'c1');
   INSERT INTO todo (title, content) VALUES ('Create a table', 'c1');
   INSERT INTO todo (title, content) VALUES ('Insert some data', 'c1');
+
+  CREATE TABLE IF NOT EXISTS plan (
+    id SERIAL PRIMARY KEY,
+    user_id integer,
+    content TEXT,
+    p_date TIMESTAMP,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+  );
 `)
 
 // SELECT
