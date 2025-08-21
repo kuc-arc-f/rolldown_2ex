@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.7",
+    "dotenv": "^17.2.1"
+  }
+}
