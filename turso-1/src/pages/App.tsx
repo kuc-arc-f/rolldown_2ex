@@ -12,6 +12,7 @@ export default function Page() {
       ): (
           <link href="/static/main.css" rel="stylesheet" /> 
       )} 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.13.0/sql-wasm.js"></script>
     </head>
     <body>
       <div id="app"></div>

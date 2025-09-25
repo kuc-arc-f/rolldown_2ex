@@ -21,7 +21,7 @@ function App() {
   const fetchTodos = async () => {
     try {
       console.log("fetchTodos.apiUrl=", API_URL)
-      const response = await axios.get(`${API_URL}/api/todos/list`);
+      const response = await axios.get(`${API_URL}/api/data/list`);
       console.log(response.data);
       setTodos(response.data.data);
     } catch (error) {

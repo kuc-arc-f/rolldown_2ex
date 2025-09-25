@@ -6,9 +6,9 @@ function Page() {
     <div>
         <Link to="/">Home</Link>
         <Link to="/about" class="ms-2">[ about ]</Link>
-        <Link to="/plan" class="ms-2">[ plan ]</Link>
         <hr />
     </div>
     );
 }
+//<Link to="/sort" class="ms-2">[ Sort ]</Link>
 export default Page;

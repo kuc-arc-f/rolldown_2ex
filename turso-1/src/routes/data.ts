@@ -84,13 +84,6 @@ router.post('/update', async function(req: any, res: any) {
       args: [body.data, body.id ],
     });
 
-    /*
-    UPDATE {} SET data = '{}' WHERE id = {}
-    await db.exec(`
-    UPDATE todo SET title = '${body.title}' WHERE id = ${body.id};
-    `);
-    db.close();
-    */
     return res.json({ret:200 , data:{}});
   } catch (error) {
     console.error(error);
