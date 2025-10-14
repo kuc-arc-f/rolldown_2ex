@@ -2,14 +2,18 @@
 
  Version: 0.9.1
 
- date    : 2025/06/15
+ date    : 2025/10/14
  
  update  :
 
 ***
-### Summary
 
 Rust MCP Server + node, MCP
+
+***
+* Rust MCP Server
+
+https://github.com/kuc-arc-f/rust_3ex/tree/main/mcp_4
 
 ***
 * build, dev-start
